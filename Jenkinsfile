@@ -10,14 +10,14 @@ pipeline {
 			DB_NAME = "xwiki"  
 		}  
 		stages {    
-			stage('Cloning Git docker-xwiki $versionXwiki') {      
+			stage('Cloning Git docker-xwiki') {      
 				steps {         
 					sh "rm -rf *"        
 					git branch: 'sa-project' , url: 'git@github.com:begun74/docker-xwiki.git'        
 					//git 'git@github.com:xwiki-contrib/docker-xwiki.git'      
 				}    
 			}    
-			stage('Building image docker-xwiki $versionXwiki') {      
+			stage('Building image docker-xwiki') {      
 				steps{        
 					script {            
 						//sh 'ls -la'            
@@ -35,7 +35,7 @@ pipeline {
 					}      
 				}    
 			}     
-			stage('Deploy Image  docker-xwiki $versionXwiki') {      
+			stage('Deploy Image  docker-xwiki') {      
 				steps{        
 					script {          
 						docker.withRegistry( '', registryCredential ) {            
@@ -44,7 +44,7 @@ pipeline {
 					}      
 				}    
 			}    
-			stage('Remove Unused docker image  docker-xwiki $versionXwiki') {      
+			stage('Remove Unused docker image  docker-xwiki') {      
 				steps{                
 					sh "docker rmi $registryXwiki"        
 					//sh "docker images"      
