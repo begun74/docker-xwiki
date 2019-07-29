@@ -1,5 +1,7 @@
 pipeline {  
-	agent any  
+
+	agent any
+
 		environment {    
 			versionXwiki = "10"
 			registryXwiki = "begun74/docker-xwiki:v$versionXwiki"        
