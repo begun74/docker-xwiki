@@ -66,7 +66,9 @@ COPY xwiki/hibernate.cfg.xml /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cf
 
 ##COPY xwiki/xwiki.properties  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.properties
 
+## copy settings for superuser
 COPY xwiki/xwiki.cfg  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.cfg
+
 
 
 # Set a specific distribution id in XWiki for this docker packaging.
