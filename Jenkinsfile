@@ -3,7 +3,7 @@ pipeline {
 	agent any
 
 		environment {    
-			versionXwiki = "11"
+			versionXwiki = "10"
 			registryXwiki = "begun74/docker-xwiki:v$versionXwiki"        
 			registryCredential = 'dockerhub'        
 			DB_HOST = "mysql-xwiki"    
