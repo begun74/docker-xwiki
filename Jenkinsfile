@@ -56,6 +56,11 @@ pipeline {
 		post {            
 			success {                
 				slackSend (channel: '#jenkins_news',color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [$docker-xwiki $versionXwiki]' (${env.BUILD_URL})")            
+				
+				sh """
+				   export ${env.API_AUTH_HEADER}='bvv:11060553e483551f3cf0cf497f629b03c4'
+				   curl -X POST -u ${env.API_AUTH_HEADER} http://jenkins.local/view/SA/job/02.Docker-xwiki.sa-project/build
+				"""
 			}            
 			failure {                
 				slackSend (channel: '#jenkins_news',color: '#FF0000', message: "FAILED: Job '${env.JOB_NAME} [$docker-xwiki $versionXwiki]' (${env.BUILD_URL})")            
