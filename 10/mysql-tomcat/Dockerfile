@@ -69,8 +69,9 @@ COPY xwiki/xwiki.properties  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.proper
 
 COPY xwiki/xwiki.cfg  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.cfg
 
+RUN mkdir -p /usr/local/tomcat/webapps/ROOT/WEB-INF/extensions/repository
 
-COPY xwiki/repository /usr/local/tomcat/webapps/ROOT/WEB-INF/extensions/
+COPY xwiki/repository /usr/local/tomcat/webapps/ROOT/WEB-INF/extensions/repository
 
 
 # Set a specific distribution id in XWiki for this docker packaging.
