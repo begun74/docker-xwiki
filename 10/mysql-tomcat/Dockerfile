@@ -68,6 +68,8 @@ COPY xwiki/xwiki.properties  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.proper
 
 COPY xwiki/xwiki.cfg  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.cfg
 
+COPY xwiki-platform-distribution-flavor-xip-10.11.9.xip /usr/local/tomcat/webapps/ROOT/WEB-INF/extensions/
+
 # Set a specific distribution id in XWiki for this docker packaging.
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/' \
   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
