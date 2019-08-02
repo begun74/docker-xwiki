@@ -64,11 +64,13 @@ COPY tomcat/setenv.sh /usr/local/tomcat/bin/
 # Setup the XWiki Hibernate configuration
 COPY xwiki/hibernate.cfg.xml /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml
 
-COPY xwiki/xwiki.properties  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.properties
+
+#COPY xwiki/xwiki.properties  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.properties
 
 COPY xwiki/xwiki.cfg  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.cfg
 
-COPY xwiki/xwiki-platform-distribution-flavor-xip-10.11.9.xip /usr/local/tomcat/webapps/ROOT/WEB-INF/extensions/
+#COPY xwiki/xwiki-platform-distribution-flavor-xip-10.11.9.xip /usr/local/tomcat/webapps/ROOT/WEB-INF/extensions/
+
 
 # Set a specific distribution id in XWiki for this docker packaging.
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/' \
