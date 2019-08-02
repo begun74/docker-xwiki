@@ -70,7 +70,7 @@ COPY xwiki/xwiki.properties  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.proper
 COPY xwiki/xwiki.cfg  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.cfg
 
 
-COPY xwiki/repository /usr/local/tomcat/webapps/ROOT/WEB-INF/extensions
+COPY xwiki/repository /usr/local/tomcat/webapps/ROOT/WEB-INF/extensions/
 
 
 # Set a specific distribution id in XWiki for this docker packaging.
