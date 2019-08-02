@@ -69,7 +69,8 @@ COPY xwiki/hibernate.cfg.xml /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cf
 
 COPY xwiki/xwiki.cfg  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.cfg
 
-#COPY xwiki/xwiki-platform-distribution-flavor-xip-10.11.9.xip /usr/local/tomcat/webapps/ROOT/WEB-INF/extensions/
+
+COPY xwiki/repository /usr/local/tomcat/webapps/ROOT/WEB-INF/extensions
 
 
 # Set a specific distribution id in XWiki for this docker packaging.
