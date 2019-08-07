@@ -69,6 +69,7 @@ COPY xwiki/xwiki.properties  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.proper
 ## copy settings for superuser
 COPY xwiki/xwiki.cfg  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.cfg
 
+COPY xwiki/repository /usr/local/xwiki/data/extension/repository/
 
 
 # Set a specific distribution id in XWiki for this docker packaging.
