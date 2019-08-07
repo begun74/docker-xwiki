@@ -64,7 +64,7 @@ COPY tomcat/setenv.sh /usr/local/tomcat/bin/
 # Setup the XWiki Hibernate configuration
 COPY xwiki/hibernate.cfg.xml /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml
 
-##COPY xwiki/xwiki.properties  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.properties
+COPY xwiki/xwiki.properties  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.properties
 
 ## copy settings for superuser
 COPY xwiki/xwiki.cfg  /usr/local/tomcat/webapps/ROOT/WEB-INF/xwiki.cfg
