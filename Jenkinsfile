@@ -14,6 +14,7 @@ pipeline {
 			API_HEADER='bvv:1173d2420bbf23a37152496789cc26ef27'
 
 		}  
+
 		stages {    
 			stage('Cloning Git docker-xwiki') {      
 				steps {         
