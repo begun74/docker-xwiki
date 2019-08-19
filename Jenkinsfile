@@ -57,9 +57,7 @@ pipeline {
 			success {                
 				slackSend (channel: '#jenkins_news',color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [$docker-xwiki $versionXwiki]' (${env.BUILD_URL})")            
 
-				environment {
-					API_HEADER = "bvv:1173d2420bbf23a37152496789cc26ef27"
-				}
+				env.API_HEADER = "bvv:1173d2420bbf23a37152496789cc26ef27"
 
 				
 				sh """
