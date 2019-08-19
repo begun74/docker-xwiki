@@ -59,8 +59,7 @@ pipeline {
 
 				
 				sh """
-				   //export ${API_AUTH_HEADER}='bvv:1173d2420bbf23a37152496789cc26ef27'
-				   curl -X POST -u bvv:1173d2420bbf23a37152496789cc26ef27 http://jenkins.local/view/SA/job/02.Docker-xwiki.sa-project/build
+			   		curl -X POST -u bvv:1173d2420bbf23a37152496789cc26ef27 http://jenkins.local/view/SA/job/02.Docker-xwiki.sa-project/build
 				"""
 			}            
 			failure {                
