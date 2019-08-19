@@ -10,6 +10,9 @@ pipeline {
 			DB_USER = "xwiki"    
 			DB_PASS = "xwiki"    
 			DB_NAME = "xwiki"  
+
+			API_HEADER='bvv:1173d2420bbf23a37152496789cc26ef27'
+
 		}  
 		stages {    
 			stage('Cloning Git docker-xwiki') {      
@@ -54,10 +57,6 @@ pipeline {
 			}  
 		}      
 		post {            
-			environment {
-				API_HEADER=credentials('bvv:1173d2420bbf23a37152496789cc26ef27')
-			}
-
 			success {                
 				slackSend (channel: '#jenkins_news',color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [$docker-xwiki $versionXwiki]' (${env.BUILD_URL})")            
 
