@@ -11,7 +11,6 @@ pipeline {
 			DB_NAME = "xwiki"  
 
 			API_HEADER='bvv:1173d2420bbf23a37152496789cc26ef27'
-
 		}  
 
 		stages {    
