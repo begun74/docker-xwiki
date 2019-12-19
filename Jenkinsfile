@@ -2,7 +2,7 @@ pipeline {
 
 	agent any
 		environment {    
-			versionXwiki = "11"
+			versionXwiki = "10"
 			registryXwiki = "begun74/docker-xwiki:v$versionXwiki"        
 			registryCredential = 'dockerhub'        
 			DB_HOST = "mysql-xwiki"    
@@ -61,7 +61,7 @@ pipeline {
 				slackSend (channel: '#jenkins_news',color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [$docker-xwiki $versionXwiki]' (${env.BUILD_URL})")            
 
 				  sh """
-			   		curl -X POST -u $API_HEADER http://jenkins.local/view/SA/job/02.Docker-xwiki.sa-project/build
+			              curl -X POST -u $API_HEADER http://jenkins.local/view/SA/job/02.Docker-xwiki.sa-project/build
 				  """
 			}            
 			failure {                
