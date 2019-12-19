@@ -18,7 +18,7 @@ pipeline {
 			stage('Cloning Git docker-xwiki') {      
 				steps {         
 					sh "rm -rf *"        
-					git branch: 'sa-project' , url: 'https://github.com/begun74/docker-xwiki.git' 
+					git branch: 'sa-project' , url: 'https://github.com/begun74/docker-xwiki.git'
 					//git 'git@github.com:xwiki-contrib/docker-xwiki.git'      
 				}    
 			}    
@@ -31,10 +31,10 @@ pipeline {
 						sh "cp -pr $versionXwiki/mysql-tomcat/xwiki ./"                        
 			
 						//Rename DB parameters in hibernate.cfg.xml for connecting to Mysql 5.7            
-						sh "sudo sed -i 's/replacecontainer/$DB_HOST/g' xwiki/hibernate.cfg.xml"            
-						sh "sudo sed -i 's/replaceuser/$DB_USER/g' xwiki/hibernate.cfg.xml"            
-						sh "sudo sed -i 's/replacepassword/$DB_PASS/g' xwiki/hibernate.cfg.xml"            
-						sh "sudo sed -i 's/replacedatabase/$DB_NAME/g' xwiki/hibernate.cfg.xml"                    
+						sh "sed -i 's/replacecontainer/$DB_HOST/g' xwiki/hibernate.cfg.xml"            
+						sh "sed -i 's/replaceuser/$DB_USER/g' xwiki/hibernate.cfg.xml"            
+						sh "sed -i 's/replacepassword/$DB_PASS/g' xwiki/hibernate.cfg.xml"            
+						sh "sed -i 's/replacedatabase/$DB_NAME/g' xwiki/hibernate.cfg.xml"                    
 
 						dockerImage = docker.build registryXwiki        
 					}      
