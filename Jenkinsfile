@@ -17,8 +17,8 @@ pipeline {
 		stages {    
 			stage('Cloning Git docker-xwiki') {      
 				steps {         
-					//sh "rm -rf *"        
-					git branch: 'sa-project' , url: 'git@github.com:begun74/docker-xwiki.git'        
+					sh "rm -rf *"        
+					git branch: 'sa-project' , url: 'https://github.com/begun74/docker-xwiki.git' 
 					//git 'git@github.com:xwiki-contrib/docker-xwiki.git'      
 				}    
 			}    
