@@ -60,12 +60,12 @@ pipeline {
 				//slackSend (channel: '#jenkins_news',color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [$docker-xwiki $versionXwiki]' (${env.BUILD_URL})")            
 
 		  sh """
-                             curl -X POST -u $API_HEADER http://http://10.13.210.53:8088/job/02.SA_project//build 
+                             //curl -X POST -u $API_HEADER http://http://10.13.210.53:8088/job/02.SA_project//build 
 
                             //curl -X POST -u $API_HEADER http://10.13.210.53:8088/job/02.SA_project_param/buildWithParameters \
 	                    //--data-urlencode json='{"parameter": [{"VER":v$versionXwiki}]}'
 
-                            //curl -X POST -u $API_HEADER http://10.13.210.53:8088/job/02.SA_project_param/buildWithParameters?token=$API_HEADER&VER=v$versionXwiki
+                            curl -X POST -u $API_HEADER http://10.13.210.53:8088/job/02.SA_project_param/buildWithParameters?VER=v$versionXwiki
 
                   """
                                sh"echo 'success'"
